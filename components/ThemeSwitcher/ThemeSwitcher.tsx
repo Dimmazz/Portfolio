@@ -12,7 +12,7 @@ const ThemeSwitcher = ({parentClass}: Iprops) => {
 
   const [icon, setIcon] = useState('ri-sun-line')
 
-  const toggleTheme: React.ChangeEventHandler<HTMLInputElement> = () => {
+  const toggleTheme: React.ChangeEventHandler<HTMLInputElement> = (_event) => {
     const isLight = document.documentElement.classList.contains('LIGHT')
     const isDark = document.documentElement.classList.contains('DARK')
 
@@ -36,7 +36,7 @@ const ThemeSwitcher = ({parentClass}: Iprops) => {
 
   return (
     <div className={s['themeSwipper'] + ' ' + parentClass}>
-      <button className={s['themeSwipper__button']} type='button' onClick={_event => toggleTheme()}>
+      <button className={s['themeSwipper__button']} type='button' onClick={_event => toggleTheme(_event as any)}>
         <i className={s['themeSwipper__icon'] + ' ' + icon}></i>
       </button>
     </div>
